@@ -1,0 +1,26 @@
+::view-transition-group(*) {
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+
+body {
+  background-color: #221;
+  color: white;
+}
+
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+#item-0 {
+  opacity: 0.2;
+}
+
+.item {
+  border: 1px solid #888;
+  background-color: #333;
+  place-content: center;
+  cursor: pointer;
+}
