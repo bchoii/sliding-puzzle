@@ -24,11 +24,13 @@ function App() {
   function toggle(clickedNumber: number) {
     document.startViewTransition(() => {
       flushSync(() => {
-        const index0 = board.indexOf(0);
-        const clickedIndex = board.indexOf(clickedNumber);
-        const newBoard = [...board.slice(0, clickedIndex), 0, ...board.slice(clickedIndex + 1)];
-        const newBoard2 = [...newBoard.slice(0, index0), clickedNumber, ...newBoard.slice(index0 + 1)];
-        setBoard(newBoard2);
+        const newBoard = board.map(b => b == 0 ? clickedNumber : b == clickedNumber ? 0 : b)
+        setBoard(newBoard);
+        // const index0 = board.indexOf(0);
+        // const clickedIndex = board.indexOf(clickedNumber);
+        // const newBoard = [...board.slice(0, clickedIndex), 0, ...board.slice(clickedIndex + 1)];
+        // const newBoard2 = [...newBoard.slice(0, index0), clickedNumber, ...newBoard.slice(index0 + 1)];
+        // setBoard(newBoard2);
         // setBoard((board) => [...board.filter((i) => i != clickedIndex), index]);
       });
     });
